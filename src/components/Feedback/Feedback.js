@@ -15,14 +15,13 @@ function Feedback() {
   return (
     <div className={s.root}>
       <div className={s.container}>
-        <a
-          className={s.link}
-          href="https://gitter.im/kriasoft/react-starter-kit"
-        >Ask a question</a>
+        <p className={s.text}>
+          Made with love
+        </p>
         <span className={s.spacer}>|</span>
         <a
           className={s.link}
-          href="https://github.com/kriasoft/react-starter-kit/issues/new"
+          href="https://github.com/danagilliann/travel_log/issues"
         >Report an issue</a>
       </div>
     </div>
