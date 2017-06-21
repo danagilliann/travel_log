@@ -16,7 +16,10 @@ function Feedback() {
     <div className={s.root}>
       <div className={s.container}>
         <p className={s.text}>
-          Made with love
+          Made with &#10084; by
+          <a className={s.link} href="https://github.com/danagilliann">
+            &nbsp;Dana
+          </a>
         </p>
         <span className={s.spacer}>|</span>
         <a
