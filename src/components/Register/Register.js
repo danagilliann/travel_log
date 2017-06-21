@@ -6,7 +6,7 @@ class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'email',
+      email: null,
       name: 'name',
       password: 'pass',
       confirmPassword: 'pass2x',
@@ -17,8 +17,8 @@ class Register extends React.Component {
   render() {
     return (
       <div className={s.registerForm}>
-        <form> {/* add the ff: onSubmit={this.saveAndCountinue} */}
-          <input type="text" value={this.state.email} />
+        <form readOnly> {/* add the ff: onSubmit={this.saveAndCountinue} */}
+          <input type="text" value={this.state.email}/>
         </form>
       </div>
     );
