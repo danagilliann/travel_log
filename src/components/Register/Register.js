@@ -7,9 +7,9 @@ class Register extends React.Component {
     super(props);
     this.state = {
       email: null,
-      name: 'name',
-      password: 'pass',
-      confirmPassword: 'pass2x',
+      name: null,
+      password: null,
+      confirmPassword: null,
       forbiddenWords: ['password', 'user', 'username']
     };
   }
@@ -18,7 +18,21 @@ class Register extends React.Component {
     return (
       <div className={s.registerForm}>
         <form readOnly> {/* add the ff: onSubmit={this.saveAndCountinue} */}
-          <input type="text" value={this.state.email}/>
+          <p>
+            Email:
+            <input type="text" value={this.state.email}/>
+          </p>
+          <p>
+            Name:
+            <input type="text" value={this.state.name}/></p>
+          <p>
+            Password:
+            <input type="text" value={this.state.password}/>
+          </p>
+          <p>
+            Confirm Password:
+            <input type="text" value={this.state.confirmPassword}/>
+          </p>
         </form>
       </div>
     );
