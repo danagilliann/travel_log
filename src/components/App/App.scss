@@ -53,6 +53,19 @@ p {
   text-shadow: none;
 }
 
+button, input[type="submit"] {
+  background: #fff;
+  border-color: #000;
+}
+
+input[type="text"] {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom-width: 2px;
+  border-bottom-color: black;
+}
+
 /*
  * A better looking default horizontal rule
  */

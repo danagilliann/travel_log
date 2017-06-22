@@ -18,21 +18,19 @@ class Register extends React.Component {
     return (
       <div className={s.registerForm}>
         <form readOnly> {/* add the ff: onSubmit={this.saveAndCountinue} */}
-          <p>
-            Email:
-            <input type="text" value={this.state.email}/>
-          </p>
-          <p>
-            Name:
-            <input type="text" value={this.state.name}/></p>
-          <p>
-            Password:
-            <input type="text" value={this.state.password}/>
-          </p>
-          <p>
-            Confirm Password:
-            <input type="text" value={this.state.confirmPassword}/>
-          </p>
+          <p>Email</p>
+          <p><input type="text" value={this.state.email} /></p>
+
+          <p>Name</p>
+          <p><input type="text" value={this.state.name} /></p>
+
+          <p>Password</p>
+          <p><input type="text" value={this.state.password} /></p>
+
+          <p>Confirm Password</p>
+          <p><input type="text" value={this.state.confirmPassword} /></p>
+
+          <input type="submit" value="Submit" />
         </form>
       </div>
     );
