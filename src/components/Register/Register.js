@@ -6,29 +6,29 @@ class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: null,
-      name: null,
-      password: null,
-      confirmPassword: null,
+      email: "Email",
+      name: "Name",
+      password: "Password",
+      confirmPassword: "Confirm Password",
       forbiddenWords: ['password', 'user', 'username']
     };
+  }
+
+  handleSubmit(evt) {
+    alert('Hi');
+    event.preventDefault();
   }
 
   render() {
     return (
       <div className={s.registerForm}>
-        <form readOnly> {/* add the ff: onSubmit={this.saveAndCountinue} */}
-          <p>Email</p>
-          <p><input type="text" value={this.state.email} /></p>
+        <form onSubmit={this.handleSubmit}>
+          <p><input className={s.input} type="text" value={this.state.email} /></p>
+          <p><input className={s.input} type="text" value={this.state.name} /></p>
 
-          <p>Name</p>
-          <p><input type="text" value={this.state.name} /></p>
+          <p><input className={s.input} type="text" value={this.state.password} /></p>
 
-          <p>Password</p>
-          <p><input type="text" value={this.state.password} /></p>
-
-          <p>Confirm Password</p>
-          <p><input type="text" value={this.state.confirmPassword} /></p>
+          <p><input className={s.input} type="text" value={this.state.confirmPassword} /></p>
 
           <input type="submit" value="Submit" />
         </form>
