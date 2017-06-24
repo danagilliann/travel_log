@@ -22,6 +22,7 @@ class Register extends React.Component {
   render() {
     return (
       <div className={s.registerForm}>
+        <h1>Register</h1>
         <form onSubmit={this.handleSubmit}>
           <p><input className={s.input} type="text" value={this.state.email} /></p>
           <p><input className={s.input} type="text" value={this.state.name} /></p>
@@ -30,7 +31,7 @@ class Register extends React.Component {
 
           <p><input className={s.input} type="text" value={this.state.confirmPassword} /></p>
 
-          <input type="submit" value="Submit" />
+          <input className={s.submit} type="submit" value="Submit" />
         </form>
       </div>
     );
