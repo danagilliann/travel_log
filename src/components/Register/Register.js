@@ -12,6 +12,8 @@ class Register extends React.Component {
       confirmPassword: "Confirm Password",
       forbiddenWords: ['password', 'user', 'username']
     };
+
+    this.textChange = this.textChange.bind(this);
   }
 
   handleSubmit(evt) {
@@ -19,15 +21,19 @@ class Register extends React.Component {
     event.preventDefault();
   }
 
+  textChange(evt) {
+    this.setState({email: evt.target.value});
+  }
+
   render() {
     return (
       <div className={s.registerForm}>
         <h1>Register</h1>
         <form onSubmit={this.handleSubmit}>
-          <p><input className={s.input} type="text" value={this.state.email} /></p>
+          <p><input className={s.input} onChange={this.textChange} type="text" value={this.state.email} /></p>
           <p><input className={s.input} type="text" value={this.state.name} /></p>
 
-          <p><input className={s.input} type="text" value={this.state.password} /></p>
+          <p><input className={s.input} type="password" value={this.state.password} /></p>
 
           <p><input className={s.input} type="text" value={this.state.confirmPassword} /></p>
 
