@@ -25,8 +25,7 @@ class Register extends React.Component {
   textChange(evt) {
     let target = evt.target.id;
 
-    console.log(target);
-    this.setState({[evt.target.id]: evt.target.value});
+    this.setState({[target]: evt.target.value});
   }
 
   render() {
