@@ -14,6 +14,7 @@ class Register extends React.Component {
       forbiddenWords: ['password', 'user', 'username'],
       textType: "text",
       passwordType: 'text',
+      confirmPasswordType: 'text',
     };
   }
 
@@ -37,9 +38,10 @@ class Register extends React.Component {
   }
 
   typeHandler = (id) => {
-    if (id === 'password' || id === 'confirmPassword') {
-      // console.log('in password', id);
+    if (id === 'password') {
       return ['passwordType', 'password'];
+    } else if (id === 'confirmPassword') {
+      return ['confirmPasswordType', 'password'];
     } else {
       // console.log('in other', type);
       return ['textType', 'text'];
@@ -54,7 +56,7 @@ class Register extends React.Component {
           <p><input className={s.input} id="email" onChange={this.textChange} type={this.state.textType} value={this.state.email} /></p>
           <p><input className={s.input} id="name" onChange={this.textChange} type={this.state.textType} value={this.state.name} /></p>
           <p><input className={s.input} id="password" onChange={this.textChange} type={this.state.passwordType} value={this.state.password} /></p>
-          <p><input className={s.input} id="confirmPassword" onChange={this.textChange} type={this.state.passwordType} value={this.state.confirmPassword} /></p>
+          <p><input className={s.input} id="confirmPassword" onChange={this.textChange} type={this.state.confirmPasswordType} value={this.state.confirmPassword} /></p>
 
           <input className={s.submit} type="submit" value="Submit" />
         </form>
