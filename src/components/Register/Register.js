@@ -14,30 +14,36 @@ class Register extends React.Component {
       forbiddenWords: ['password', 'user', 'username'],
       type: "text",
     };
-
-    this.textChange = this.textChange.bind(this);
   }
 
-  handleSubmit(evt) {
+  submitHandler = (evt) => {
     alert('Hi');
     event.preventDefault();
   }
 
-  textChange(evt) {
+  textChange = (evt) => {
     let id = evt.target.id;
     let type = evt.target.type;
 
     this.setState({
         [id]: evt.target.value,
-        type: 'password'
+        type: this.typeHandler(type)
     });
+  }
+
+  typeHandler = (type) => {
+    if (type === 'password' || 'confirmPassword') {
+      return 'password';
+    } else {
+      return type;
+    }
   }
 
   render() {
     return (
       <div className={s.registerForm}>
         <h1>Register</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.submitHandler}>
           <p><input className={s.input} id="email" onChange={this.textChange} type={this.state.type} value={this.state.email} /></p>
           <p><input className={s.input} id="name" onChange={this.textChange} type={this.state.type} value={this.state.name} /></p>
           <p><input className={s.input} id="password" onChange={this.textChange} type={this.state.type} value={this.state.password} /></p>
