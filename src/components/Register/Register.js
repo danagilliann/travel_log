@@ -12,7 +12,8 @@ class Register extends React.Component {
       password: "Password",
       confirmPassword: "Confirm Password",
       forbiddenWords: ['password', 'user', 'username'],
-      type: "text",
+      textType: "text",
+      passwordType: 'text',
     };
   }
 
@@ -23,19 +24,25 @@ class Register extends React.Component {
 
   textChange = (evt) => {
     let id = evt.target.id;
-    let type = evt.target.type;
+    let typeArray = this.typeHandler(id);
+    let typeVariable = typeArray[0];
+    let typeValue = typeArray[1];
+
+    console.log(typeVariable, ":", typeValue);
 
     this.setState({
         [id]: evt.target.value,
-        type: this.typeHandler(type)
+        [typeVariable]: typeValue,
     });
   }
 
-  typeHandler = (type) => {
-    if (type === 'password' || 'confirmPassword') {
-      return 'password';
+  typeHandler = (id) => {
+    if (id === 'password' || id === 'confirmPassword') {
+      // console.log('in password', id);
+      return ['passwordType', 'password'];
     } else {
-      return type;
+      // console.log('in other', type);
+      return ['textType', 'text'];
     }
   }
 
@@ -44,10 +51,10 @@ class Register extends React.Component {
       <div className={s.registerForm}>
         <h1>Register</h1>
         <form onSubmit={this.submitHandler}>
-          <p><input className={s.input} id="email" onChange={this.textChange} type={this.state.type} value={this.state.email} /></p>
-          <p><input className={s.input} id="name" onChange={this.textChange} type={this.state.type} value={this.state.name} /></p>
-          <p><input className={s.input} id="password" onChange={this.textChange} type={this.state.type} value={this.state.password} /></p>
-          <p><input className={s.input} id="confirmPassword" onChange={this.textChange} type={this.state.type} value={this.state.confirmPassword} /></p>
+          <p><input className={s.input} id="email" onChange={this.textChange} type={this.state.textType} value={this.state.email} /></p>
+          <p><input className={s.input} id="name" onChange={this.textChange} type={this.state.textType} value={this.state.name} /></p>
+          <p><input className={s.input} id="password" onChange={this.textChange} type={this.state.passwordType} value={this.state.password} /></p>
+          <p><input className={s.input} id="confirmPassword" onChange={this.textChange} type={this.state.passwordType} value={this.state.confirmPassword} /></p>
 
           <input className={s.submit} type="submit" value="Submit" />
         </form>
