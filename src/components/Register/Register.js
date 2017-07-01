@@ -18,6 +18,7 @@ class Register extends React.Component {
     };
   }
 
+  // TODO: Improve this
   submitHandler = (evt) => {
     alert('Hi');
     event.preventDefault();
