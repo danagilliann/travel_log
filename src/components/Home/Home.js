@@ -1,6 +1,7 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Home.scss';
+import Login from '../Login';
 
 class Home extends React.Component {
   constructor(props) {
@@ -10,8 +11,8 @@ class Home extends React.Component {
   render() {
     return (
       <div>
+        <Login />
         <button>Register</button>
-        <button>Login</button>
       </div>
     )
   }
