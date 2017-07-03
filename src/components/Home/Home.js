@@ -9,7 +9,10 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div></div>
+      <div>
+        <button>Register</button>
+        <button>Login</button>
+      </div>
     )
   }
 }
