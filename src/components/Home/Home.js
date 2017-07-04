@@ -12,7 +12,7 @@ class Home extends React.Component {
     return (
       <div>
         <Login />
-        <button>Register</button>
+        <p>If you don't have an account, register here</p>
       </div>
     )
   }
