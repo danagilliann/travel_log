@@ -57,7 +57,6 @@ class App extends Component {
     return !this.props.error ? (
       <div>
         <Header />
-        <Home />
         {this.props.children}
         <Feedback />
       </div>
