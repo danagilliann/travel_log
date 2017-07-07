@@ -55,6 +55,11 @@ class Login extends React.Component {
             <p><input className={s.input} id="password" onChange={this.textChange} type={this.state.passwordType} value={this.state.password} /></p>
             <input className={s.submit} type="submit" value="Submit" />
           </form>
+          <div className={s.registerText}>
+            <p>
+              If you do not have an account, please <a className={s.registerLink} href="/register">register</a>
+            </p>
+          </div>
         </div>
       );
   }

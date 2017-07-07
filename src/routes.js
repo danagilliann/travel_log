@@ -28,11 +28,10 @@ const router = new Router(on => {
 
   on('/', async(state, next) => {
     const component = await next();
-    console.log("OMG");
     return component && <App context={state.context}><Login></Login><Feedback></Feedback></App>;
   });
 
-  on('/index', async (state, next) => {
+  on('/register', async (state, next) => {
     const component = await next();
     return component && <App context={state.context}>{component}</App>;
   });
