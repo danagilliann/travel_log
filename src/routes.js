@@ -12,6 +12,7 @@ import Router from 'react-routing/src/Router';
 import fetch from './core/fetch';
 import App from './components/App';
 import Login from './components/Login';
+import Feedback from './components/Feedback';
 import ContentPage from './components/ContentPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
@@ -28,7 +29,7 @@ const router = new Router(on => {
   on('/', async(state, next) => {
     const component = await next();
     console.log("OMG");
-    return component && <App context={state.context}><Login></Login></App>;
+    return component && <App context={state.context}><Login></Login><Feedback></Feedback></App>;
   });
 
   on('/index', async (state, next) => {

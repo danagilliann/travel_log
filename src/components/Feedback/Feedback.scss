@@ -10,8 +10,8 @@
 @import '../variables.scss';
 
 .root {
-  background: #f5f5f5;
-  color: #333;
+  background: #262626;
+  color: #fff;
 }
 
 .container {
@@ -30,7 +30,7 @@
 .link:active,
 .link:hover,
 .link:visited {
-  color: #333;
+  color: #fff;
   text-decoration: none;
 }
 
