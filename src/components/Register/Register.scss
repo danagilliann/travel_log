@@ -4,6 +4,18 @@
   text-align: center;
 }
 
+.loginText {
+  padding-top: 2em;
+}
+
+.loginLink,
+.loginLink:active,
+.loginLink:hover,
+.loginLink:visited {
+  color: #000;
+  text-decoration: underline;
+}
+
 .input {
   text-align: center;
   margin: 1em;

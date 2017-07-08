@@ -58,8 +58,12 @@ class Register extends React.Component {
           <p><input className={s.input} id="name" onChange={this.textChange} type={this.state.textType} value={this.state.name} /></p>
           <p><input className={s.input} id="password" onChange={this.textChange} type={this.state.passwordType} value={this.state.password} /></p>
           <p><input className={s.input} id="confirmPassword" onChange={this.textChange} type={this.state.confirmPasswordType} value={this.state.confirmPassword} /></p>
-
           <input className={s.submit} type="submit" value="Submit" />
+          <div className={s.loginText}>
+            <p>
+              If you have an account, please <a className={s.loginLink} href="/">login</a>
+            </p>
+          </div>
         </form>
       </div>
     );
