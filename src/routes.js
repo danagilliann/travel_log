@@ -12,10 +12,11 @@ import Router from 'react-routing/src/Router';
 import fetch from './core/fetch';
 import App from './components/App';
 import Login from './components/Login';
-import Feedback from './components/Feedback';
+import Register from './components/Register';
 import ContentPage from './components/ContentPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
+import Feedback from './components/Feedback';
 
 const routes = [
   require('./routes/home'),
@@ -28,12 +29,12 @@ const router = new Router(on => {
 
   on('/', async(state, next) => {
     const component = await next();
-    return component && <App context={state.context}><Login></Login><Feedback></Feedback></App>;
+    return component && <App context={state.context}><Login></Login></App>;
   });
 
   on('/register', async (state, next) => {
     const component = await next();
-    return component && <App context={state.context}>{component}</App>;
+    return component && <App context={state.context}><Register></Register></App>;
   });
 
   routes.forEach(route => {

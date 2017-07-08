@@ -1,6 +1,7 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Login.scss';
+import Feedback from '../Feedback';
 
 class Login extends React.Component {
 
@@ -59,6 +60,9 @@ class Login extends React.Component {
             <p>
               If you do not have an account, please <a className={s.registerLink} href="/register">register</a>
             </p>
+          </div>
+          <div className={s.feedback}>
+            <Feedback />
           </div>
         </div>
       );

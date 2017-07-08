@@ -1,6 +1,7 @@
 import React from 'react';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Register.scss';
+import Feedback from '../Feedback';
 
 class Register extends React.Component {
   constructor(props) {
@@ -65,6 +66,9 @@ class Register extends React.Component {
             </p>
           </div>
         </form>
+        <div className={s.feedback}>
+          <Feedback />
+        </div>
       </div>
     );
   }
