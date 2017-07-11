@@ -17,11 +17,12 @@ import ContentPage from './components/ContentPage';
 import NotFoundPage from './components/NotFoundPage';
 import ErrorPage from './components/ErrorPage';
 import Feedback from './components/Feedback';
+import Dashboard from './components/Dashboard';
 
 const routes = [
   require('./routes/home'),
   // require('./routes/contact'),
-  // require('./routes/login'),
+  require('./routes/dashboard'),
   require('./routes/register'),
 ];
 
@@ -30,6 +31,11 @@ const router = new Router(on => {
   on('/', async(state, next) => {
     const component = await next();
     return component && <App context={state.context}><Login></Login></App>;
+  });
+
+  on('/dashboard', async (state, next) => {
+    const component = await next();
+    return component && <App context={state.context}><Dashboard></Dashboard></App>;
   });
 
   on('/register', async (state, next) => {

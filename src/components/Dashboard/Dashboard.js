@@ -15,3 +15,5 @@ class Dashboard extends React.Component {
   }
 
 }
+
+export default withStyles(Dashboard, s);
