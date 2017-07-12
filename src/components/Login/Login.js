@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router';
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './Login.scss';
 import Feedback from '../Feedback';
@@ -14,13 +15,13 @@ class Login extends React.Component {
       textType: "text",
       passwordType: 'text',
       confirmPasswordType: 'text',
+      shouldRedirect: false
     };
   }
 
-  // TODO: Improve this
   submitHandler = (evt) => {
-    alert('Hi');
     event.preventDefault();
+    this.setState({ shouldRedirect: true });
   }
 
   textChange = (evt) => {
@@ -48,6 +49,14 @@ class Login extends React.Component {
   }
 
   render() {
+    const { shouldRedirect } = this.state;
+
+    if (shouldRedirect) {
+      return (
+        <Redirect to="/dashboard"/>
+      );
+    }
+
     return (
         <div className={s.loginForm}>
           <h1>Login</h1>
