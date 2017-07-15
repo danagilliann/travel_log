@@ -20,12 +20,11 @@ class Login extends React.Component {
   }
 
   submitHandler = (evt) => {
-    event.preventDefault();
-
     // const {router} = this.context;
-    alert("hi");
     console.log(this.context);
+    debugger;
     // router.replaceWith('/dashboard');
+    event.preventDefault();
   }
 
   textChange = (evt) => {
