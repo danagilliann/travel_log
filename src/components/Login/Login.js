@@ -21,7 +21,11 @@ class Login extends React.Component {
 
   submitHandler = (evt) => {
     event.preventDefault();
-    this.setState({ shouldRedirect: true });
+
+    // const {router} = this.context;
+    alert("hi");
+    console.log(this.context);
+    // router.replaceWith('/dashboard');
   }
 
   textChange = (evt) => {
@@ -49,14 +53,6 @@ class Login extends React.Component {
   }
 
   render() {
-    const { shouldRedirect } = this.state;
-
-    if (shouldRedirect) {
-      return (
-        <Redirect to="/dashboard"/>
-      );
-    }
-
     return (
         <div className={s.loginForm}>
           <h1>Login</h1>
